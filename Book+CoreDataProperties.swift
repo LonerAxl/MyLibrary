@@ -30,9 +30,5 @@ extension Book {
     @NSManaged public var readcount: Int16
     @NSManaged public var pages: Int16
     @NSManaged public var pubdate: String?
-    @NSManaged public var relationship: Current?
-    @NSManaged public var relationship1: Read?
-    @NSManaged public var relationship2: Unread?
-    @NSManaged public var relationship3: WishList?
 
 }

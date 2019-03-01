@@ -15,28 +15,8 @@
         <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="translator" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Current" inverseName="currentReading" inverseEntity="Current" syncable="YES"/>
-        <relationship name="relationship1" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Read" inverseName="alreadyRead" inverseEntity="Read" syncable="YES"/>
-        <relationship name="relationship2" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Unread" inverseName="notReadYet" inverseEntity="Unread" syncable="YES"/>
-        <relationship name="relationship3" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WishList" inverseName="notBuyYet" inverseEntity="WishList" syncable="YES"/>
-    </entity>
-    <entity name="Current" representedClassName="Current" syncable="YES" codeGenerationType="class">
-        <relationship name="currentReading" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Book" inverseName="relationship" inverseEntity="Book" syncable="YES"/>
-    </entity>
-    <entity name="Read" representedClassName="Read" syncable="YES" codeGenerationType="class">
-        <relationship name="alreadyRead" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Book" inverseName="relationship1" inverseEntity="Book" syncable="YES"/>
-    </entity>
-    <entity name="Unread" representedClassName="Unread" syncable="YES" codeGenerationType="class">
-        <relationship name="notReadYet" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Book" inverseName="relationship2" inverseEntity="Book" syncable="YES"/>
-    </entity>
-    <entity name="WishList" representedClassName="WishList" syncable="YES" codeGenerationType="class">
-        <relationship name="notBuyYet" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Book" inverseName="relationship3" inverseEntity="Book" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Book" positionX="-63" positionY="-18" width="128" height="315"/>
-        <element name="Current" positionX="147.40625" positionY="-183.19140625" width="128" height="60"/>
-        <element name="Read" positionX="222.18359375" positionY="107.65625" width="121.84765625" height="60"/>
-        <element name="Unread" positionX="100.71484375" positionY="203.55078125" width="128" height="60"/>
-        <element name="WishList" positionX="325.2734375" positionY="22.98828125" width="128" height="60"/>
+        <element name="Book" positionX="-63" positionY="-18" width="128" height="255"/>
     </elements>
 </model>
