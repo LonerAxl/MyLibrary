@@ -82,6 +82,7 @@ class BookHelper: NSObject{
         book.setValue(self.publisher, forKey: "publisher")
         do {
             try managedObjectContext.save()
+            print("Insert successfully")
         } catch  {
             fatalError("无法保存")
         }

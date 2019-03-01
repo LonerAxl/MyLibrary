@@ -12,6 +12,7 @@ import CoreData
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    let url = "https://api.douban.com/v2/book/isbn/"
     var window: UIWindow?
 
 
