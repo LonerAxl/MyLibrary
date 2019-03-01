@@ -2,6 +2,36 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Read+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:Read+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
+      location = "group:Unread+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:Unread+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
+      location = "group:WishList+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:WishList+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
+      location = "group:Current+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:Current+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
+      location = "group:Book+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:Book+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
       location = "group:Library.xcodeproj">
    </FileRef>
    <FileRef

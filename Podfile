@@ -7,14 +7,13 @@ target 'Library' do
 
   # Pods for Library
   pod 'Alamofire', '~>4.8'
-  pod 'HandyJSON','~>4.1'
   pod 'Eureka','~>4.0'
   pod 'SideMenu', '~> 5.0.0'
   pod 'SnapKit', '~>4.0.0'
   pod 'SCLAlertView'
   pod 'Toast-Swift', '~>4.0.0'
   pod 'Charts','~>3.2'
-
+  pod 'SwiftyJSON', '~>4.0'
   target 'LibraryTests' do
     inherit! :search_paths
     # Pods for testing

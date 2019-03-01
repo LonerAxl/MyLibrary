@@ -17,6 +17,8 @@
 		CE4323332228BFF80012FC56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE4323312228BFF80012FC56 /* LaunchScreen.storyboard */; };
 		CE43233E2228BFF80012FC56 /* LibraryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43233D2228BFF80012FC56 /* LibraryTests.swift */; };
 		CE4323492228BFF80012FC56 /* LibraryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4323482228BFF80012FC56 /* LibraryUITests.swift */; };
+		CEF983422229094600B02E4F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF983412229094600B02E4F /* MainViewController.swift */; };
+		CEF9834422290A3A00B02E4F /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF9834322290A3A00B02E4F /* Book.swift */; };
 		F88F60D63C38FF29ED6795C5 /* Pods_LibraryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2156480A71D98BE827A7B3D1 /* Pods_LibraryTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +62,8 @@
 		CE4323442228BFF80012FC56 /* LibraryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LibraryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE4323482228BFF80012FC56 /* LibraryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryUITests.swift; sourceTree = "<group>"; };
 		CE43234A2228BFF80012FC56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEF983412229094600B02E4F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		CEF9834322290A3A00B02E4F /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		DA1FB21BD3963EC946AD3651 /* Pods-LibraryUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LibraryUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LibraryUITests/Pods-LibraryUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,6 +150,8 @@
 				CE4323312228BFF80012FC56 /* LaunchScreen.storyboard */,
 				CE4323342228BFF80012FC56 /* Info.plist */,
 				CE43232C2228BFF70012FC56 /* Library.xcdatamodeld */,
+				CEF983412229094600B02E4F /* MainViewController.swift */,
+				CEF9834322290A3A00B02E4F /* Book.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -377,10 +383,10 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
-				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
 				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -390,10 +396,10 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -411,6 +417,8 @@
 				CE4323282228BFF60012FC56 /* ViewController.swift in Sources */,
 				CE4323262228BFF60012FC56 /* AppDelegate.swift in Sources */,
 				CE43232E2228BFF70012FC56 /* Library.xcdatamodeld in Sources */,
+				CEF9834422290A3A00B02E4F /* Book.swift in Sources */,
+				CEF983422229094600B02E4F /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
