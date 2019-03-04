@@ -12,14 +12,37 @@ import Eureka
 
 class BookListViewController: FormViewController {
     var status:readStatus?
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        form +++ Section(self.title ?? "" + "列表"){
+            $0.tag = "List"
+        }
         // Do any additional setup after loading the view.
     }
     
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let section = self.form.sectionBy(tag: "List")
+        let managedObjectContext = self.appDelegate.managedContext
+        let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Book")
+        fetch.predicate = NSPredicate.init(format: "status == %@", (status?.rawValue)!)
+        do{
+            let fetchResult = try managedObjectContext.fetch(fetch)
+            
+            for i in fetchResult{
+                let book = i as! Book
+                section! <<< BookRow(book.isbn13){
+                    $0.book = book
+                }
+            }
+        }catch{
+            fatalError("???")
+        }
+        
+        
+    }
     /*
     // MARK: - Navigation
 

@@ -21,6 +21,8 @@
 		CEF9834422290A3A00B02E4F /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF9834322290A3A00B02E4F /* Book.swift */; };
 		CEFAF986222D1C3F00FFC96E /* MainV2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFAF985222D1C3F00FFC96E /* MainV2ViewController.swift */; };
 		CEFAF988222D211400FFC96E /* BookListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFAF987222D211400FFC96E /* BookListViewController.swift */; };
+		CEFAF98B222D252300FFC96E /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFAF989222D252300FFC96E /* BookCell.swift */; };
+		CEFAF98C222D252300FFC96E /* BookCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEFAF98A222D252300FFC96E /* BookCell.xib */; };
 		F88F60D63C38FF29ED6795C5 /* Pods_LibraryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2156480A71D98BE827A7B3D1 /* Pods_LibraryTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +70,8 @@
 		CEF9834322290A3A00B02E4F /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		CEFAF985222D1C3F00FFC96E /* MainV2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainV2ViewController.swift; sourceTree = "<group>"; };
 		CEFAF987222D211400FFC96E /* BookListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListViewController.swift; sourceTree = "<group>"; };
+		CEFAF989222D252300FFC96E /* BookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
+		CEFAF98A222D252300FFC96E /* BookCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookCell.xib; sourceTree = "<group>"; };
 		DA1FB21BD3963EC946AD3651 /* Pods-LibraryUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LibraryUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LibraryUITests/Pods-LibraryUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -158,6 +162,8 @@
 				CEF9834322290A3A00B02E4F /* Book.swift */,
 				CEFAF985222D1C3F00FFC96E /* MainV2ViewController.swift */,
 				CEFAF987222D211400FFC96E /* BookListViewController.swift */,
+				CEFAF989222D252300FFC96E /* BookCell.swift */,
+				CEFAF98A222D252300FFC96E /* BookCell.xib */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -291,6 +297,7 @@
 				CE4323332228BFF80012FC56 /* LaunchScreen.storyboard in Resources */,
 				CE4323302228BFF80012FC56 /* Assets.xcassets in Resources */,
 				CE43232B2228BFF60012FC56 /* Main.storyboard in Resources */,
+				CEFAF98C222D252300FFC96E /* BookCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,6 +430,7 @@
 				CE4323282228BFF60012FC56 /* ViewController.swift in Sources */,
 				CE4323262228BFF60012FC56 /* AppDelegate.swift in Sources */,
 				CE43232E2228BFF70012FC56 /* Library.xcdatamodeld in Sources */,
+				CEFAF98B222D252300FFC96E /* BookCell.swift in Sources */,
 				CEFAF986222D1C3F00FFC96E /* MainV2ViewController.swift in Sources */,
 				CEF9834422290A3A00B02E4F /* Book.swift in Sources */,
 				CEF983422229094600B02E4F /* MainViewController.swift in Sources */,

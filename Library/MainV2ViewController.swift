@@ -53,7 +53,7 @@ class MainV2ViewController: FormViewController {
         // Pass the selected object to the new view controller.
         if segue.identifier == "MainSegue"{
             let destVC = segue.destination as! BookListViewController
-            destVC.status = readStatus(rawValue: (sender as! ButtonRow).tag!)
+            destVC.status = readStatus(rawValue: (sender as! ButtonRow).tag!.lowercased())
             destVC.title = (sender as! ButtonRow).title
         }
     }
