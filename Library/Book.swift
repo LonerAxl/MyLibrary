@@ -30,7 +30,7 @@ class BookHelper: NSObject{
     var summary:String?
     var title:String?
     var translator:String?
-    var pages:Int?
+    var pages:String?
     var pubdate:String?
     var wishdate:Date?
     var buydate:Date?
@@ -50,7 +50,7 @@ class BookHelper: NSObject{
         author = Json["author"][0].string
         image = Json["image"].string
         translator = Json["translator"][0].string
-        pages = Json["pages"].int
+        pages = Json["pages"].string
         publisher = Json["publisher"].string
         isbn13 = Json["isbn13"].string
         title = Json["title"].string

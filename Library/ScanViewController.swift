@@ -20,17 +20,21 @@ class ScanViewController: ViewController, AVCaptureMetadataOutputObjectsDelegate
         session = AVCaptureSession()
         let videoCaptureDevice = AVCaptureDevice.default(for: .video)
         let videoInput : AVCaptureDeviceInput?
-        do {
-            videoInput = try AVCaptureDeviceInput.init(device: videoCaptureDevice!)
-        }catch{
-            print("camera error")
-            return
+        if videoCaptureDevice != nil{
+            do {
+                videoInput = try AVCaptureDeviceInput.init(device: videoCaptureDevice!)
+            }catch{
+                print("camera error")
+                return
+            }
+            if ((session?.canAddInput(videoInput!))!){
+                session?.addInput(videoInput!)
+            }else{
+                scanningNotPossible()
+            }
         }
-        if ((session?.canAddInput(videoInput!))!){
-            session?.addInput(videoInput!)
-        }else{
-            scanningNotPossible()
-        }
+        
+        
         
         
         let metadataOutput = AVCaptureMetadataOutput()

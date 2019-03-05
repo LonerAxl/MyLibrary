@@ -20,7 +20,7 @@ extension Book {
     @NSManaged public var category: String?
     @NSManaged public var image: String?
     @NSManaged public var isbn13: String?
-    @NSManaged public var pages: Int16
+    @NSManaged public var pages: String?
     @NSManaged public var price: String?
     @NSManaged public var pubdate: String?
     @NSManaged public var publisher: String?

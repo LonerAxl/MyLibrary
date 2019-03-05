@@ -59,22 +59,18 @@ class ScanResultViewController: FormViewController {
         if isbn != nil{
             Alamofire.request(self.appDelegate.url + isbn!, method: .post, parameters: nil, encoding: URLEncoding.default, headers: nil).response{response in
                 let data = response.data
-                do {
-                    let json = try JSON.init(data: data!)
-                    print(json.stringValue)
-                }catch{
-                    print("error")
-                }
                 
+                let value = String(data: data!, encoding: String.Encoding.utf8)
+                print(value)
                 
-                var book = BookHelper.init(data: data!, readdate: nil, status: nil, readcount: nil, wishdate: nil, buydate: nil)
-                
+                var book = BookHelper.init(data: data!, readdate: nil, status: nil, readcount: 	nil, wishdate: nil, buydate: nil)
+                self.updateView(book: book)
             }
         }
         // Do any additional setup after loading the view.
     }
     
-    func updateView(book: Book){
+    func updateView(book: BookHelper){
         var row = self.form.rowBy(tag: "Title") as! LabelRow
         row.value = book.title
         row.updateCell()
@@ -98,7 +94,7 @@ class ScanResultViewController: FormViewController {
         row.value = book.price
         row.updateCell()
         row = self.form.rowBy(tag: "Pages") as! LabelRow
-        row.value = String(book.pages)
+        row.value = book.pages
         row.updateCell()
         row = self.form.rowBy(tag: "Pubdate") as! LabelRow
         row.value = book.pubdate
