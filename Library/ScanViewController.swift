@@ -47,6 +47,7 @@ class ScanViewController: ViewController, AVCaptureMetadataOutputObjectsDelegate
         preview = AVCaptureVideoPreviewLayer.init(session: session!)
         preview.frame = view.layer.bounds
         preview.videoGravity = .resizeAspectFill
+        metadataOutput.rectOfInterest = self.calculateScanRect()
         view.layer.addSublayer(preview)
         
         session?.startRunning()
@@ -67,12 +68,27 @@ class ScanViewController: ViewController, AVCaptureMetadataOutputObjectsDelegate
         }
     }
 
+
+    
+    func calculateScanRect()->CGRect{
+        let previewSize: CGSize = self.preview.frame.size
+        let scanSize: CGSize = CGSize.init(width: previewSize.width * 3/4, height: previewSize.height * 3/4)
+        var scanRect:CGRect = CGRect.init(x: (previewSize.width-scanSize.width)/2, y: (previewSize.height-scanSize.height)/2, width: scanSize.width, height: scanSize.height)
+        // AVCapture输出的图片大小都是横着的，而iPhone的屏幕是竖着的，那么我把它旋转90°
+        scanRect = CGRect.init(x: scanRect.origin.y/previewSize.height,
+                               y: scanRect.origin.x/previewSize.width,
+                               width: scanRect.size.height/previewSize.height,
+                               height: scanRect.size.width/previewSize.width);
+        return scanRect
+    }
+    
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         if let barcodeData = metadataObjects.first{
             let barcodeReadable = barcodeData as? AVMetadataMachineReadableCodeObject
             if let readableCode = barcodeReadable{
-                let alertView = SCLAlertView()
-                alertView.showInfo("扫描成功", subTitle: readableCode.stringValue!)
+                self.performSegue(withIdentifier: "ScanSegue", sender: readableCode)
+//                let alertView = SCLAlertView()
+//                alertView.showInfo("扫描成功", subTitle: readableCode.stringValue!)
             }
             AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
             session?.stopRunning()
@@ -82,15 +98,19 @@ class ScanViewController: ViewController, AVCaptureMetadataOutputObjectsDelegate
     
     
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "ScanSegue"{
+            let destVC = segue.destination as! ScanResultViewController
+            destVC.isbn = (sender as! AVMetadataMachineReadableCodeObject).stringValue!
+        }
     }
-    */
+    
 
     func scanningNotPossible(){
         let alertView = SCLAlertView()
