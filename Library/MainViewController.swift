@@ -28,7 +28,7 @@ class MainViewController: FormViewController {
             if text.value != nil{
                 Alamofire.request(self.appDelegate.url + text.value!, method: .post, parameters: nil, encoding: URLEncoding.default, headers: nil).response{response in
                     let data = response.data
-                    var book = BookHelper.init(data: data!, readdate: nil, status: nil, readcount: nil)
+                    var book = BookHelper.init(data: data!, readdate: nil, status: nil, readcount: nil, wishdate: nil, buydate: nil)
                     book.insert()
                 }
             }

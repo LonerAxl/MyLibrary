@@ -24,6 +24,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="TAh-5l-UMs">
                             <connections>
                                 <action selector="addButton:" destination="BYZ-38-t0r" id="1Rp-sp-rGt"/>
+                                <segue destination="cPb-db-L3U" kind="show" id="XH7-p8-46j"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -34,6 +35,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="670" y="-564"/>
+        </scene>
+        <!--Scan View Controller-->
+        <scene sceneID="1eT-tN-ZvI">
+            <objects>
+                <viewController id="cPb-db-L3U" customClass="ScanViewController" customModule="Library" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fkD-ww-X56">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="ib8-lm-Iw4"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4c3-R1-8fx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1585" y="-1244"/>
         </scene>
         <!--Title-->
         <scene sceneID="uIY-Or-LVX">

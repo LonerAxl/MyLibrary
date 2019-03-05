@@ -9,7 +9,7 @@
 import UIKit
 import Eureka
 import CoreData
-import Alamofire
+
 class BookCell: Cell<String>, CellType {
     
     @IBOutlet weak var bookImage: UIImageView!
@@ -35,10 +35,10 @@ class BookCell: Cell<String>, CellType {
         titleLabel.text = (row as! BookRow).book?.title
         authorLabel.text = (row as! BookRow).book?.author
         publisherLabel.text = (row as! BookRow).book?.publisher
-        Alamofire.request(((row as! BookRow).book?.image)!, method: .post, parameters: nil, encoding: URLEncoding.default, headers: nil).response{response in
-            self.bookImage.image = UIImage.init(data: response.data!)
-            self.row.updateCell()
-            //error
+        do {
+            try imageView?.image = UIImage.init(data: Data.init(contentsOf: URL.init(string: ((row as! BookRow).book?.image)!)!))
+        }catch{
+            print("image Error")
         }
 
     }

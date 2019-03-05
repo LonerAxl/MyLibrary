@@ -32,13 +32,15 @@ class BookHelper: NSObject{
     var translator:String?
     var pages:Int?
     var pubdate:String?
+    var wishdate:Date?
+    var buydate:Date?
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     override init() {
         super.init()
     }
     
-    init(data:Data, readdate: Date?, status: readStatus?, readcount: Int?) {
+    init(data:Data, readdate: Date?, status: readStatus?, readcount: Int?, wishdate: Date?, buydate: Date?) {
         var Json = JSON()
         do {
             Json = try JSON.init(data: data)
@@ -59,6 +61,8 @@ class BookHelper: NSObject{
         self.readcount = readcount ?? 0
         self.status = status ?? readStatus.wishList
         self.readdate = readdate ?? Date.init(timeIntervalSince1970: TimeInterval.init(0))
+        self.wishdate = wishdate ?? Date.init(timeIntervalSince1970: TimeInterval.init(0))
+        self.buydate = buydate ??  Date.init(timeIntervalSince1970: TimeInterval.init(0))
     }
     
     
@@ -80,6 +84,8 @@ class BookHelper: NSObject{
         book.setValue(self.readdate, forKey: "readdate")
         book.setValue(self.status?.rawValue, forKey: "status")
         book.setValue(self.publisher, forKey: "publisher")
+        book.setValue(self.wishdate, forKey: "wishdate")
+        book.setValue(self.buydate, forKey: "buydate")
         do {
             try managedObjectContext.save()
             print("Insert successfully")

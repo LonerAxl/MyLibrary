@@ -27,7 +27,12 @@ class BookListViewController: FormViewController {
         let section = self.form.sectionBy(tag: "List")
         let managedObjectContext = self.appDelegate.managedContext
         let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Book")
-        fetch.predicate = NSPredicate.init(format: "status == %@", (status?.rawValue)!)
+        if status == nil{
+            fetch.predicate = NSPredicate.init(format: "status != %@", readStatus.wishList.rawValue)
+        }else{
+            fetch.predicate = NSPredicate.init(format: "status == %@", (status?.rawValue)!)
+        }
+        
         do{
             let fetchResult = try managedObjectContext.fetch(fetch)
             
